@@ -21,6 +21,11 @@ Currently available environments:
 | Render Modes | 'human', 'rgb_array', 'ansi' |
 
 ## Installation
+Via PyPI
+
+    pip install rubiks-cube-gym
+Or build from source
+
     git clone https://github.com/DoubleGremlin181/RubiksCubeGym.git
     cd RubiksCubeGym
     pip install -e .
