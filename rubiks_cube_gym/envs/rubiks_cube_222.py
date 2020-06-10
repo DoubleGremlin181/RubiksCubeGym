@@ -1,5 +1,5 @@
 import pickle
-
+import random
 import gym
 from gym import spaces
 import os
@@ -35,6 +35,23 @@ class RubiksCube222Env(gym.Env):
 
     def update_cube_state(self):
         self.cube_state = self.cube_states[self.cube_reduced]
+
+    def generate_scramble(self):
+        scramble_len = 0
+        prev_move = None
+        scramble = ""
+        moves = ['F', 'R', 'U']
+        move_type = ['', '2', "'"]
+
+        while scramble_len < 10:
+            move = random.choice(moves)
+            while move == prev_move:
+                move = random.choice(moves)
+            scramble += move + random.choice(move_type) + " "
+            prev_move = move
+            scramble_len += 1
+
+        return scramble[:-1]
 
     def move(self, move_side, move_type=None):
         repetitions = {None: 1, "2": 2, "'": 3}  # TODO Optimize prime moves from 3 clockwise to 1 anticlockwise moves
@@ -97,6 +114,8 @@ class RubiksCube222Env(gym.Env):
                              dtype=np.uint8)
         if scramble:
             self.algorithm(scramble)
+        else:
+            self.algorithm(self.generate_scramble())
 
         self.update_cube_reduced()
         self.update_cube_state()
