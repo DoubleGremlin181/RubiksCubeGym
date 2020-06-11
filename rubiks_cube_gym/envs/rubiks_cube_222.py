@@ -60,7 +60,6 @@ class RubiksCube222Env(gym.Env):
             side_cubies_old = np.array([1, 3, 7, 15, 21, 23, 18, 10])
             face_cubies_old = np.array([[8, 9], [16, 17]])
         elif move_side == "L":
-
             side_cubies_old = np.array([2, 0, 11, 19, 22, 20, 14, 6])
             face_cubies_old = np.array([[4, 5], [12, 13]])
         elif move_side == "F":
