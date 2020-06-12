@@ -54,7 +54,7 @@ class RubiksCube222Env(gym.Env):
         return scramble[:-1]
 
     def move(self, move_side, move_type=None):
-        repetitions = {None: 1, "2": 2, "'": 3}  # TODO Optimize prime moves from 3 clockwise to 1 anticlockwise moves
+        repetitions = dict({None: 1, "2": 2, "'": 3})[move_type]
 
         if move_side == "R":
             side_cubies_old = np.array([1, 3, 7, 15, 21, 23, 18, 10])
@@ -75,12 +75,12 @@ class RubiksCube222Env(gym.Env):
             side_cubies_old = np.array([14, 15, 12, 13, 18, 19, 16, 17])
             face_cubies_old = np.array([[20, 21], [22, 23]])
 
-        side_cubies_new = np.roll(side_cubies_old, -2)
-        face_cubies_new = np.rot90(face_cubies_old, 3).flatten()
+        side_cubies_new = np.roll(side_cubies_old, -2*repetitions)
+        face_cubies_new = np.rot90(face_cubies_old, 4-repetitions).flatten()
         face_cubies_old = face_cubies_old.flatten()
-        for i in range(repetitions[move_type]):
-            np.put(self.cube, side_cubies_old, self.cube[side_cubies_new])
-            np.put(self.cube, face_cubies_old, self.cube[face_cubies_new])
+
+        np.put(self.cube, side_cubies_old, self.cube[side_cubies_new])
+        np.put(self.cube, face_cubies_old, self.cube[face_cubies_new])
 
     def algorithm(self, moves):
         for move in moves.split(" "):
