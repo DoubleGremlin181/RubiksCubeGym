@@ -4,12 +4,12 @@
 Currently available environments:  
 
  - [x] 2x2x2 Pocket Rubik's Cube 
- - [ ] Pyraminx
+ - [x] Pyraminx
  - [ ] Skewb
   
 ## Details:  
 ### 2x2x2 Pocket Rubik's Cube  
-![Mapping of tiles](mapping.png)
+![Mapping of tiles](images/rubiks_cube_222_mapping.png)
 |  |  |
 |--|--|
 | Action Space | Discrete(3) |
@@ -18,6 +18,18 @@ Currently available environments:
 | Rewards | (-inf, 100]  |
 | Max steps | 250  |
 | Reward Types | Base, Layer By Layer Method, Ortega Method |
+| Render Modes | 'human', 'rgb_array', 'ansi' |
+
+### Pyraminx without tips 
+![Mapping of tiles](images/pyraminx_mapping.png)
+|  |  |
+|--|--|
+| Action Space | Discrete(4) |
+| Observation Space| Discrete(933120) |
+| Actions | L, R, U, B |  
+| Rewards | (-inf, 100]  |
+| Max steps | 250  |
+| Reward Types | Base|
 | Render Modes | 'human', 'rgb_array', 'ansi' |
 
 ## Installation
@@ -63,5 +75,5 @@ The scramble should follow the [WCA Notation](https://www.worldcubeassociation.o
     (1682970, -1, False, {'cube': array([ 0, 18,  2,  8,  4,  5,  6,  3,  7, 17, 23, 11, 12, 13, 14,  1, 10, 16, 21, 19, 20,  9, 22, 15], dtype=uint8), 'cube_reduced': 'WBWROOGWGRYBOOGWBRYBYRYG'})
     (2220193, 25, False, {'cube': array([ 0,  3,  2,  1,  4,  5,  6,  9, 10,  7,  8, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23], dtype=uint8), 'cube_reduced': 'WWWWOOGRBGRBOOGGRRBBYYYY'})
 
-![Output](example.gif)
+![Output](images/example.gif)
 
