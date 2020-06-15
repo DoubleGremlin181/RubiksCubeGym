@@ -17,3 +17,9 @@ register(
     entry_point='rubiks_cube_gym.envs:RubiksCube222EnvOrtega',
     max_episode_steps=250,
 )
+
+register(
+    id='pyraminx-wo-tips-v0',
+    entry_point='rubiks_cube_gym.envs:PyraminxWoTipsEnv',
+    max_episode_steps=250,
+)
