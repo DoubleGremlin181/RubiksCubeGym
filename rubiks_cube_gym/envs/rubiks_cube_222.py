@@ -43,7 +43,7 @@ class RubiksCube222Env(gym.Env):
         moves = ['F', 'R', 'U']
         move_type = ['', '2', "'"]
 
-        while scramble_len < 10:
+        while scramble_len < 11:
             move = random.choice(moves)
             while move == prev_move:
                 move = random.choice(moves)

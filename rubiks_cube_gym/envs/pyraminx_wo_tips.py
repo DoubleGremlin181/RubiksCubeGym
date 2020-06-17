@@ -43,7 +43,7 @@ class PyraminxWoTipsEnv(gym.Env):
         layer_moves = ['L', 'R', 'U', 'B']
         layer_move_types = ['', "'"]
 
-        while scramble_len < 8:
+        while scramble_len < 11:
             move = random.choice(layer_moves)
             while move == prev_move:
                 move = random.choice(layer_moves)
