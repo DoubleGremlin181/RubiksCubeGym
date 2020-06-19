@@ -15,8 +15,8 @@ Currently available environments:
 | Action Space | Discrete(3) |
 | Observation Space| Discrete(3674160) |
 | Actions | F, R, U |  
-| Rewards | (-inf, 100]  |
-| Max steps | 250  |
+| Rewards | (-inf, 100] |
+| Max steps | 250 |
 | Reward Types | Base, Layer By Layer Method, Ortega Method |
 | Render Modes | 'human', 'rgb_array', 'ansi' |
 
@@ -27,9 +27,21 @@ Currently available environments:
 | Action Space | Discrete(4) |
 | Observation Space| Discrete(933120) |
 | Actions | L, R, U, B |  
-| Rewards | (-inf, 100]  |
-| Max steps | 250  |
-| Reward Types | Base|
+| Rewards | (-inf, 100] |
+| Max steps | 250 |
+| Reward Types | Base |
+| Render Modes | 'human', 'rgb_array', 'ansi' |
+
+### Skewb
+![Mapping of tiles](images/skewb_mapping.png)
+|  |  |
+|--|--|
+| Action Space | Discrete(4) |
+| Observation Space| Discrete(3149280) |
+| Actions | L, R, U, B |  
+| Rewards | (-inf, 100] |
+| Max steps | 250 |
+| Reward Types | Base |
 | Render Modes | 'human', 'rgb_array', 'ansi' |
 
 ## Installation
