@@ -113,6 +113,8 @@ class RubiksCube222Env(gym.Env):
                              dtype=np.uint8)
         if scramble:
             self.algorithm(scramble)
+        elif scramble == False:
+            pass
         else:
             self.algorithm(self.generate_scramble())
 

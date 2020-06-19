@@ -114,6 +114,8 @@ class PyraminxWoTipsEnv(gym.Env):
                               25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35], dtype=np.uint8)
         if scramble:
             self.algorithm(scramble)
+        elif scramble == False:
+            pass
         else:
             self.algorithm(self.generate_scramble())
 
