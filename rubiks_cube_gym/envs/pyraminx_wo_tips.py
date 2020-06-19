@@ -80,7 +80,7 @@ class PyraminxWoTipsEnv(gym.Env):
         elif move == "b":
             vertex_cubies_old = np.array([0, 10, 35])
 
-        vertex_cubies_new = np.roll(vertex_cubies_old, -1*repetitions)
+        vertex_cubies_new = np.roll(vertex_cubies_old, -1 * repetitions)
         np.put(self.cube, vertex_cubies_old, self.cube[vertex_cubies_new])
 
     def algorithm(self, moves):

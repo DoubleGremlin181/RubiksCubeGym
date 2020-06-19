@@ -75,8 +75,8 @@ class RubiksCube222Env(gym.Env):
             side_cubies_old = np.array([14, 15, 12, 13, 18, 19, 16, 17])
             face_cubies_old = np.array([[20, 21], [22, 23]])
 
-        side_cubies_new = np.roll(side_cubies_old, -2*repetitions)
-        face_cubies_new = np.rot90(face_cubies_old, 4-repetitions).flatten()
+        side_cubies_new = np.roll(side_cubies_old, -2 * repetitions)
+        face_cubies_new = np.rot90(face_cubies_old, 4 - repetitions).flatten()
         face_cubies_old = face_cubies_old.flatten()
 
         np.put(self.cube, side_cubies_old, self.cube[side_cubies_new])
@@ -136,11 +136,8 @@ class RubiksCube222Env(gym.Env):
             if mode == 'rgb_array':
                 return render_array
             elif mode == "human":
-                screen_height = 225
-                screen_width = 300
-
                 img = cv2.cvtColor(render_array, cv2.COLOR_BGR2RGB)
-                img = cv2.resize(img, (screen_width, screen_height), interpolation=cv2.INTER_NEAREST)
+                img = cv2.resize(img, (300, 225), interpolation=cv2.INTER_NEAREST)
                 cv2.imshow("Cube", np.array(img))
                 cv2.waitKey(render_time)
 
