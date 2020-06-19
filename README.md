@@ -11,7 +11,7 @@ Currently available environments:
 
  - [x] 2x2x2 Pocket Rubik's Cube 
  - [x] Pyraminx
- - [ ] Skewb
+ - [x] Skewb
   
 ## Details:  
 ### 2x2x2 Pocket Rubik's Cube  
