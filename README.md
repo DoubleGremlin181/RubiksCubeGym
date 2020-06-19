@@ -1,6 +1,12 @@
 # RubiksCubeGym 
 ### An OpenAI Gym environment for various twisty puzzles.  
-  
+
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/DoubleGremlin181/RubiksCubeGym/Upload%20Python%20Package)
+![PyPI](https://img.shields.io/pypi/v/rubiks_cube_gym)
+![PyPI - Wheel](https://img.shields.io/pypi/wheel/rubiks_cube_gym)
+![PyPI - License](https://img.shields.io/pypi/l/rubiks_cube_gym)
+![PyPI - Downloads](https://img.shields.io/pypi/dm/rubiks_cube_gym)
+
 Currently available environments:  
 
  - [x] 2x2x2 Pocket Rubik's Cube 
