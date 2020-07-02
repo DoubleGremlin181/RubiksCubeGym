@@ -2,6 +2,7 @@ from rubiks_cube_gym.envs.rubiks_cube_222 import RubiksCube222Env
 import numpy as np
 from operator import itemgetter
 
+
 class RubiksCube222EnvOrtega(RubiksCube222Env):
     def __init__(self):
         super(RubiksCube222EnvOrtega, self).__init__()
