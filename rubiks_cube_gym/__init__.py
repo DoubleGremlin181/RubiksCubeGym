@@ -25,7 +25,19 @@ register(
 )
 
 register(
+    id='pyraminx-wo-tips-lbl-v0',
+    entry_point='rubiks_cube_gym.envs:PyraminxWoTipsEnvLBL',
+    max_episode_steps=250,
+)
+
+register(
     id='skewb-v0',
     entry_point='rubiks_cube_gym.envs:SkewbEnv',
+    max_episode_steps=250,
+)
+
+register(
+    id='skewb-sarah-v0',
+    entry_point='rubiks_cube_gym.envs:SkewbEnvSarah',
     max_episode_steps=250,
 )

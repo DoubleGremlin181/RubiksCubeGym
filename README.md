@@ -35,7 +35,7 @@ Currently available environments:
 | Actions | L, R, U, B |  
 | Rewards | (-inf, 100] |
 | Max steps | 250 |
-| Reward Types | Base |
+| Reward Types | Base, Layer by Layer Method |
 | Render Modes | 'human', 'rgb_array', 'ansi' |
 
 ### Skewb
@@ -47,7 +47,7 @@ Currently available environments:
 | Actions | L, R, U, B |  
 | Rewards | (-inf, 100] |
 | Max steps | 250 |
-| Reward Types | Base |
+| Reward Types | Base, Sarah's Method(Advanced) |
 | Render Modes | 'human', 'rgb_array', 'ansi' |
 
 ## Installation
