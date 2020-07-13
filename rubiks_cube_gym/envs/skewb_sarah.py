@@ -19,17 +19,17 @@ class SkewbEnvSarah(SkewbEnv):
             return True
 
     def reward(self):
-        reward = -40 * self.FL
+        reward = -25 * self.FL
         done = False
 
         if self.check_FL():
-            reward += 40
+            reward += 25
             self.FL = True
         else:
             self.FL = False
 
         if self.check_solved():
-            reward += 60
+            reward += 75
             done = True
 
         if reward <= 0:
