@@ -95,3 +95,4 @@ The scramble should follow the [WCA Notation](https://www.worldcubeassociation.o
 
 ![Output](images/example.gif)
 
+You can find my implementation and results using Parallel Q-learning [here](https://github.com/DoubleGremlin181/RubiksCubeRL).
