@@ -13,6 +13,18 @@ Currently available environments:
  - [x] Pyraminx
  - [x] Skewb
   
+### Citation
+```
+@article{hukmani2021solving,
+  title={Solving Twisty Puzzles Using Parallel Q-learning.},
+  author={Hukmani, Kavish and Kolekar, Sucheta and Vobugari, Sreekumar},
+  journal={Engineering Letters},
+  volume={29},
+  number={4},
+  year={2021}
+}
+```
+
 ## Details:  
 ### 2x2x2 Pocket Rubik's Cube  
 ![Mapping of tiles](images/rubiks_cube_222_mapping.png)
