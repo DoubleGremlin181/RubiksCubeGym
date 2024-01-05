@@ -1,7 +1,6 @@
 import pickle
-import random
-import gym
-from gym import spaces
+import gymnasium as gym
+from gymnasium import spaces
 import os
 import cv2
 import numpy as np
@@ -10,7 +9,7 @@ import wget
 
 
 class RubiksCube222Env(gym.Env):
-    metadata = {'render.modes': ['human', 'rgb_array', 'ansi']}
+    metadata = {'render_modes': ['human', 'rgb_array', 'ansi']}
 
     def __init__(self):
         self.cube = None
@@ -44,10 +43,10 @@ class RubiksCube222Env(gym.Env):
         move_type = ['', '2', "'"]
 
         while scramble_len < 11:
-            move = random.choice(moves)
+            move = self.np_random.choice(moves)
             while move == prev_move:
-                move = random.choice(moves)
-            scramble += move + random.choice(move_type) + " "
+                move = self.np_random.choice(moves)
+            scramble += move + self.np_random.choice(move_type) + " "
             prev_move = move
             scramble_len += 1
 
@@ -100,7 +99,7 @@ class RubiksCube222Env(gym.Env):
         observation = self.cube_state
         info = {"cube": self.cube, "cube_reduced": self.cube_reduced}
 
-        return observation, reward, done, info
+        return observation, reward, done, False, info
 
     def reward(self):
         if self.cube_reduced == "WWWWOOGGRRBBOOGGRRBBYYYY":
@@ -108,9 +107,12 @@ class RubiksCube222Env(gym.Env):
         else:
             return -1, False
 
-    def reset(self, scramble=None):
+    def reset(self, *, seed=None, options=None):
+        super().reset(seed=seed)
+
         self.cube = np.array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23],
                              dtype=np.uint8)
+        scramble = None if options is None else options.get("scramble")
         if scramble:
             self.algorithm(scramble)
         elif scramble == False:
@@ -121,7 +123,9 @@ class RubiksCube222Env(gym.Env):
         self.update_cube_reduced()
         self.update_cube_state()
 
-        return self.cube_state
+        info = {"cube": self.cube, "cube_reduced": self.cube_reduced}
+
+        return self.cube_state, info
 
     def render(self, mode='human', render_time=100):
         if mode == 'ansi':

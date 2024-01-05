@@ -37,11 +37,11 @@ class PyraminxWoTipsEnvLBL(PyraminxWoTipsEnv):
 
         return reward, done
 
-    def reset(self, scramble=None):
-        super(PyraminxWoTipsEnvLBL, self).reset(scramble=scramble)
+    def reset(self, *, seed=None, options=None):
+        obs, info = super().reset(seed=seed, options=options)
         self.FL = self.check_FL()
 
-        return self.cube_state
+        return obs, info
 
 
 FL_POS = [[0, 1, 2, 3, 4, 11, 12, 13, 20, 5, 14, 15, 20, 21, 6, 7, 8, 9, 10, 27, 28, 32, 33, 35],
