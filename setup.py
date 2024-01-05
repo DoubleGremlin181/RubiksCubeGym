@@ -13,6 +13,6 @@ setup(name='rubiks_cube_gym',
       author="Kavish Hukmani",
       author_email="khukmani@gmail.com",
       license="MIT",
-      install_requires=['gym', 'numpy', 'opencv-python', 'wget'],
+      install_requires=['gymnasium', 'numpy', 'opencv-python', 'wget'],
       packages=find_packages()
 )
