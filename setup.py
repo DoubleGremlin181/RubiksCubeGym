@@ -4,7 +4,7 @@ with open('README.md') as f:
     long_description = f.read()
 
 setup(name='rubiks_cube_gym',
-      version='0.5.1',
+      version='0.5.2',
       url="https://github.com/DoubleGremlin181/RubiksCubeGym/",
       description="OpenAI Gym environments for various twisty puzzles",
       long_description=long_description,
