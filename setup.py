@@ -4,7 +4,7 @@ with open('README.md') as f:
     long_description = f.read()
 
 setup(name='rubiks_cube_gym',
-      version='0.4.0',
+      version='0.5.0',
       url="https://github.com/DoubleGremlin181/RubiksCubeGym/",
       description="OpenAI Gym environments for various twisty puzzles",
       long_description=long_description,
@@ -13,6 +13,6 @@ setup(name='rubiks_cube_gym',
       author="Kavish Hukmani",
       author_email="khukmani@gmail.com",
       license="MIT",
-      install_requires=['gymnasium', 'numpy', 'opencv-python', 'wget'],
+      install_requires=['gymnasium==0.29.1', 'numpy', 'opencv-python', 'wget'],
       packages=find_packages()
 )
