@@ -50,12 +50,12 @@ class RubiksCube222EnvOrtega(RubiksCube222Env):
 
         return reward, done
 
-    def reset(self, scramble=None):
-        super(RubiksCube222EnvOrtega, self).reset(scramble=scramble)
+    def reset(self, *, seed=None, options=None):
+        obs, info = super().reset(seed=seed, options=options)
         self.FF = self.check_FF()
         self.OLL = self.check_OLL()
 
-        return self.cube_state
+        return obs, info
 
 
 FF_POS = [[0, 1, 2, 3], [4, 5, 12, 13], [6, 7, 14, 15], [8, 9, 16, 17], [10, 11, 18, 19], [20, 21, 22, 23]]

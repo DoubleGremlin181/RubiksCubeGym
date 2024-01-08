@@ -37,11 +37,11 @@ class SkewbEnvSarah(SkewbEnv):
 
         return reward, done
 
-    def reset(self, scramble=None):
-        super(SkewbEnvSarah, self).reset(scramble=scramble)
+    def reset(self, *, seed=None, options=None):
+        obs, info = super().reset(seed=seed, options=options)
         self.FL = self.check_FL()
 
-        return self.cube_state
+        return obs, info
 
 
 FL_POS = [[0, 1, 2, 3, 4, 5, 6, 10, 11, 15, 16, 20, 21], [5, 6, 7, 8, 9, 0, 3, 10, 13, 25, 28, 21, 24],

@@ -50,12 +50,12 @@ class RubiksCube222EnvLBL(RubiksCube222Env):
 
         return reward, done
 
-    def reset(self, scramble=None):
-        super(RubiksCube222EnvLBL, self).reset(scramble=scramble)
+    def reset(self, *, seed=None, options=None):
+        obs, info = super().reset(seed=seed, options=options)
         self.FL = self.check_FL()
         self.OLL = self.check_OLL()
         
-        return self.cube_state
+        return obs, info
     
     
 FL_POS = [[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12], [0, 2, 4, 5, 6, 11, 12, 13, 14, 19, 20, 22],
